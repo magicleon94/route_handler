@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 abstract class RouteHandler<T> {
   ///[settings] are the `RouteSettings` passed by the `onGenerateRoute` from `MaterialApp`
   final RouteSettings settings;
+  Map<String, String> _queryParameters;
 
   ///[routeExtra] is an optional extra if a complex object needs to be passed to the route
   final T routeExtra;
@@ -18,6 +19,10 @@ abstract class RouteHandler<T> {
   /// Example: routeName?id=1&name=foo will result in
   /// {'id': '1', 'name':'foo'}
   Map<String, String> get queryParameters {
+    if (_queryParameters != null) {
+      return _queryParameters;
+    }
+
     final urlParts = settings.name.split('?');
     if (urlParts.length > 1) {
       final paramPart = urlParts[1];
@@ -28,9 +33,10 @@ abstract class RouteHandler<T> {
         final value = split[1];
         params[key] = value;
       });
-      return params;
+      _queryParameters = params;
     }
 
-    return {};
+    _queryParameters ??= {};
+    return _queryParameters;
   }
 }
