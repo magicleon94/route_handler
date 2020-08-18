@@ -1,6 +1,6 @@
 name: route_handler
 description: A simple abstraction that provides a structured guideline for named route handling in Flutter
-version: 1.0.0+2
+version: 1.0.0+3
 homepage: https://github.com/magicleon94/route_handler
 
 environment:
