@@ -1,0 +1,12 @@
+name: route_handler
+description: Simple abstraction for handling routes in Flutter
+version: 1.0.0
+homepage: https://github.com/magicleon94/route_handler
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0 <2.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
