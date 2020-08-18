@@ -1,6 +1,6 @@
 # route_handler
 
-Simple abstraction for handling routes in Flutter
+A simple abstraction that provides a structured guideline for named route handling in Flutter
 
 ## Usage
 
