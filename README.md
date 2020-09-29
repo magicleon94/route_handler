@@ -2,10 +2,9 @@
 
 A simple abstraction that provides a structured guideline for named route handling in Flutter.
 
-This provides an easy abstraction to deal with named routes in a structured way. You can either access parameters passed in a URL fashioned way and/or use more complex objects.
+It supports query parameters for url-like behaviors and, via the ~~`routeExtra`~~ `arguments` property it is possible to provider more complex objects to the route.
 
-For URL-like parameters just access the `queryParameters` getter provided by the abstraction.
-For complex objects use the `routeExtra` property.
+If `arguments` not provided, it defaults to the `RouteSettings` `argument` property value.
 
 ## Usage
 

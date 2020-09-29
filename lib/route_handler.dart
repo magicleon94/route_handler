@@ -6,11 +6,13 @@ abstract class RouteHandler<T> {
   final RouteSettings settings;
   Map<String, String> _queryParameters;
 
-  ///[routeExtra] is an optional extra if a complex object needs to be passed to the route
-  final T routeExtra;
+  ///[arguments] is an optional extra if a complex object needs to be passed to the route.
+  ///Defaults to the RouteSettings argument.
+  final T arguments;
 
   @mustCallSuper
-  RouteHandler(this.settings, {this.routeExtra});
+  RouteHandler(this.settings, {T arguments})
+      : this.arguments = arguments ?? settings?.arguments;
 
   /// Returns the generated route
   Route getRoute(BuildContext context);
