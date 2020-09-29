@@ -5,11 +5,13 @@ abstract class RouteHandler<T> {
   ///[settings] are the `RouteSettings` passed by the `onGenerateRoute` from `MaterialApp`
   final RouteSettings settings;
 
-  ///[routeExtra] is an optional extra if a complex object needs to be passed to the route
-  final T routeExtra;
+  ///[arguments] is an optional extra if a complex object needs to be passed to the route.
+  ///Defaults to the RouteSettings argument.
+  final T arguments;
 
   @mustCallSuper
-  RouteHandler(this.settings, {this.routeExtra});
+  RouteHandler(this.settings, {T arguments})
+      : this.arguments = arguments ?? settings?.arguments;
 
   /// Returns the generated route
   Route getRoute(BuildContext context);

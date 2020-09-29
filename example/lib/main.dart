@@ -138,14 +138,14 @@ class RouteParamHandler extends RouteHandler<RouteParameter> {
   RouteParamHandler(RouteSettings settings, RouteParameter extra)
       : super(
           settings,
-          routeExtra: extra,
+          arguments: extra,
         );
 
   @override
   Route getRoute(BuildContext context) {
     return MaterialPageRoute(
       builder: (_) => RouteParameterPage(
-        parameter: routeExtra,
+        parameter: arguments,
       ),
     );
   }
