@@ -30,12 +30,12 @@ class RootPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            RaisedButton(
+            ElevatedButton(
               child: Text("Query param example"),
               onPressed: () => Navigator.of(context)
                   .pushNamed(Routes.queryParam + '?id=1&name=foo&surname=bar'),
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Route param example"),
               onPressed: () => Navigator.of(context).pushNamed(
                 Routes.routeParam,

@@ -1,5 +1,6 @@
 name: example
 description: route_handler package example app
+publish_to: none
 
 version: 1.0.0+1
 
